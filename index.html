@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <title>JS Image Gallery</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="main-image">
-      <img id="main-image" src="" alt="Main">
+  <header>
+    <h1>Image Gallery</h1>
+  </header>
+
+  <main>
+    <div class="imgHolder">
+      <img src="assets\got5.jpg" alt="Chosen Image" id="imgMain">
     </div>
-    <div class="thumbnails" id="thumbnails"></div>
-  </div>
+    <div class="scrollImg" id="imgScroll">
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
