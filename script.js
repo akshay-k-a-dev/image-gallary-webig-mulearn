@@ -1,3 +1,6 @@
+const scrollDisplay = document.getElementById('imgScroll');
+const displayImg = document.getElementById('imgMain');
+
 const images = [
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800',
   'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800',
@@ -6,24 +9,15 @@ const images = [
   'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800'
 ];
 
-const mainImage = document.getElementById('main-image');
-const thumbnailsContainer = document.getElementById('thumbnails');
+for (let i = 0; i < images.length; i++) {
+  const newImg = document.createElement('img');
+  newImg.src = images[i];
+  newImg.alt = 'Image ' + (i + 1);
 
-// Set default main image
-mainImage.src = images[0];
-
-// Populate thumbnails
-images.forEach((imgSrc, index) => {
-  const thumb = document.createElement('img');
-  thumb.src = imgSrc;
-  thumb.alt = `Image ${index + 1}`;
-
-  // On click, swap with main image
-  thumb.addEventListener('click', () => {
-    const temp = mainImage.src;
-    mainImage.src = thumb.src;
-    thumb.src = temp;
+  newImg.addEventListener('click', () => {
+    displayImg.src = newImg.src;
+    displayImg.alt = newImg.alt;
   });
 
-  thumbnailsContainer.appendChild(thumb);
-});
+  scrollDisplay.appendChild(newImg);
+}
