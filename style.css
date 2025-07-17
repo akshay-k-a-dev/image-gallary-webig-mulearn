@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.main-image img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.thumbnails img:hover {
+  border-color: white;
+  transform: scale(1.05);
+}
