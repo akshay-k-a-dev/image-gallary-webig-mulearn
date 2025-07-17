@@ -6,19 +6,24 @@ const images = [
   'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800'
 ];
 
-const mainImg = document.getElementById('main');
-const thumbs = document.getElementById('thumbs');
+const mainImage = document.getElementById('main-image');
+const thumbnailsContainer = document.getElementById('thumbnails');
 
-images.forEach((src, index) => {
-  // Skip the first one (already main)
-  if (index === 0) return;
+// Set default main image
+mainImage.src = images[0];
 
+// Populate thumbnails
+images.forEach((imgSrc, index) => {
   const thumb = document.createElement('img');
-  thumb.src = src;
+  thumb.src = imgSrc;
+  thumb.alt = `Image ${index + 1}`;
+
+  // On click, swap with main image
   thumb.addEventListener('click', () => {
-    const currentMain = mainImg.src;
-    mainImg.src = src;
-    thumb.src = currentMain;
+    const temp = mainImage.src;
+    mainImage.src = thumb.src;
+    thumb.src = temp;
   });
-  thumbs.appendChild(thumb);
+
+  thumbnailsContainer.appendChild(thumb);
 });
